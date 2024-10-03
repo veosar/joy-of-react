@@ -9,7 +9,7 @@ function GuessInput({hasWon, hasLost, handleNewGuess}) {
       setGuess('');
     }}>
       <label htmlFor="guess-input">Enter guess:</label><br/>
-      <input id="guess-input" disabled={hasWon || hasLost} value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} type="text" required pattern="^.{5}$" />
+      <input id="guess-input" disabled={hasWon || hasLost} value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} type="text" maxLength={5} required pattern="^.{5}$" />
     </form>
   );
 }
