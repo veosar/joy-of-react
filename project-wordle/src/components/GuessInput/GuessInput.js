@@ -5,15 +5,11 @@ function GuessInput({hasWon, hasLost, handleNewGuess}) {
   return (    
     <form onSubmit={(event) => {
       event.preventDefault();
-      if (guess.length != 5) {
-        setGuess('');
-        return;
-      }
       handleNewGuess(guess);
       setGuess('');
     }}>
       <label htmlFor="guess-input">Enter guess:</label><br/>
-      <input id="guess-input" disabled={hasWon || hasLost} value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} type="text" pattern="^.{5}$" />
+      <input id="guess-input" disabled={hasWon || hasLost} value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} type="text" required pattern="^.{5}$" />
     </form>
   );
 }
